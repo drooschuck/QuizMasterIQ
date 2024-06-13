@@ -1,71 +1,70 @@
 const quizArr = [
   {
     id: 1,
-    question: "What is the correct way to write a JavaScript array?",
-    options: {
-      A: "var colors = 'red', 'green', 'blue';",
-      B: "var colors = ['red', 'green', 'blue']",
-      C: "var colors = (1:'red', 2:'green', 3:'blue');",
-      D: "var colors = 'red' + 'green' + 'blue';",
+      question: "Muslims will often write the initials P.B.U.H. after the name of a prophet. What does this mean?",
+      options: {
+        A: "Please be utterly happy",
+        B: "Peace be upon him",
+        C: "Peace be under heaven",
+        D: "Peace be up high",
+      },
+      answer: "B",  
     },
-    answer: "B",
-  },
-  {
-    id: 2,
-    question: "What is the correct way to write a JavaScript object?",
-    options: {
-      A: "var person = 'John', 'Doe', 25;",
-      B: "var person = ('John', 'Doe', 25);",
-      C: "var person = {firstName:'John', lastName:'Doe', age:25};",
-      D: "var person = 'firstName:John, lastName:Doe, age:25';",
+    {
+       id: 2,	
+      question: "In which direction do Muslims face when praying?",
+      "options": {
+        A: "Towards Mecca",
+        B: "Towards Istanbul",
+        C: "Towards Rome",
+        D: "Towards Jerusalem",
+      },
+      answer: "A",
     },
-    answer: "C",
-  },
-  {
-    id: 3,
-    question: "How do you round the number 7.25, to the nearest integer?",
-    options: {
-      A: "Math.round(7.25)",
-      B: "round(7.25)",
-      C: "rnd(7.25)",
-      D: "math.rnd(7.25)",
+    {
+       id: 3,   	
+       question: "The name Islam comes from the word 'Salaam', which means .......",
+       options: {
+        A: "love",
+        B: "freedom",
+        C: "peace",
+        D: "justice",
+      },
+      "answer": "C",
     },
-    answer: "A",
-  },
-  {
-    id: 4,
-    question: "How do you find the length of a string in JavaScript?",
-    options: {
-      A: "length(myString)",
-      B: "myString.length()",
-      C: "myString.length",
-      D: "str.length(myString)",
+    {
+      id: 4,  
+      question: "The holy month of prayer, fasting and pilgrimage is known as .......",
+      options: { 
+       A: "Spring",
+       B: "Eid",
+       C: "Ramadan",
+       D: "Shahadah",
+      },
+      answer: "C",
     },
-    answer: "C",
-  },
-  {
-    id: 5,
-    question: "How do you create a function in JavaScript?",
-    options: {
-      A: "function:myFunction()",
-      B: "new.function(myFunction)",
-      C: "function myFunction()",
-      D: "create.function(myFunction)",
+    {
+      id: 5,  
+      question: "How many times a day should Muslims pray?",
+      options: {
+      A: "Once",
+      B: "Twice",
+      C: "Four times",
+      D: "Five times"
+      },
+      answer: "D",
     },
-    answer: "C",
-  },
-  {
-    id: 6,
-    question:
-      "What is the correct way to concatenate two strings in JavaScript?",
-    options: {
-      A: "myString1 + myString2",
-      B: "myString1.concat(myString2)",
-      C: "myString1 && myString2",
-      D: "myString1.join(myString2)",
+    { 
+      id: 6,
+      question: "Which of the following is NOT a holy and sacred book in Islam?",
+      options: {
+       A: "The Koran",
+       B: "The Psalms",
+       C: "The Bible",
+       D: "De Anima"
+      },
+      answer: "D",
     },
-    answer: "A",
-  },
   {
     id: 7,
     question: "What is the correct way to define a variable in JavaScript?",
