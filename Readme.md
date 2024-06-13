@@ -1,6 +1,6 @@
 # QuizMasterJS - Quiz Application
 
-QuizMasterJS is an application designed for individuals to assess their knowledge of JavaScript through a series of tests. [Visit Website](https://quizmasterjs.netlify.app/).
+QuizMasterJS is an application designed for individuals to assess their knowledge of JavaScript through a series of tests. [Visit Website](https://iquizapp.netlify.app//).
 
 ## Some Cool Features
 
