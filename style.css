@@ -231,13 +231,13 @@ body.dark-mode .label .ball {
   flex-basis: 50%;
 }
 .banner-title {
-  font-size: 5.9rem;
+  font-size: 2.9rem;
   font-weight: 600;
   line-height: 1;
 }
 .banner-description {
   margin: 2rem 0;
-  font-size: 1.1rem;
+  font-size: 2.1rem;
   color: var(--secondary-black);
 }
 .banner button {
