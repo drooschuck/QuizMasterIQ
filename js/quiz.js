@@ -111,7 +111,6 @@ const quizArr = [
        D  "Zakah",
       },
       answer: "C",
-      "explanation": "Mecca is a city in Saudi Arabia"
   },
   {
     id: 11,
