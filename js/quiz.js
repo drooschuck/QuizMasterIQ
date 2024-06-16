@@ -65,50 +65,53 @@ const quizArr = [
       },
       answer: "D",
     },
-  {
-    id: 7,
-    question: "What is the correct way to define a variable in JavaScript?",
-    options: {
-      A: "v myVariable = 'hello'",
-      B: "variable myVariable = 'hello'",
-      C: "var myVariable = 'hello'",
-      D: "let myVariable = 'hello'",
+     {
+      id: 7,    	
+      question: "Where do Muslims go to worship?",
+      options: {
+        A: "temple",
+        B: "church",
+        C: "synagogue",
+        D: "mosque",
+      },
+      answer: "D",
+      
     },
-    answer: "C",
-  },
-  {
-    id: 8,
-    question: "What is the correct way to create a loop in JavaScript?",
-    options: {
-      A: "for (i = 0; i < 5; i++)",
-      B: "for i = 1 to 5",
-      C: "while (i < 5)",
-      D: "loop i = 1 to 5",
+    { 
+      id: 8,
+      question: "How many pillars of Islam are there?",
+      options: {
+       A: "Four",
+       B: "Five",
+       C: "Eight",
+       D: "Ten",
+      },
+      answer: "B",
+      
     },
-    answer: "A",
-  },
-  {
-    id: 9,
-    question:
-      "What is the correct way to declare a variable using the let keyword?",
-    options: {
-      A: "let myVariable = 'hello';",
-      B: "var myVariable = 'hello';",
-      C: "const myVariable = 'hello';",
-      D: "new myVariable = 'hello';",
+    { 
+      id: 9,  
+      question: "One of the pillars of Islam is Salah, which means .......",
+      options: {
+       A: "prayer",
+       B: "fasting",
+       C: "giving to charity",
+       D: "pilgrimage"
+       },  
+      answer: "A",
+      
     },
-    answer: "A",
-  },
-  {
-    id: 10,
-    question: "What is the difference between let and var?",
-    options: {
-      A: "let and var are same",
-      B: "let has block scope and var has function scope",
-      C: "var has block scope and let has function scope",
-      D: "let is used to declare constant and var is used to declare variable",
-    },
-    answer: "B",
+    {
+       id: 10, 
+       question: "What is the name for the pilgrimage to Mecca which all faithful Muslims must try to undertake at least once?",
+       options: {
+       A: "Shahadah",
+       B: "Salah",
+       C: "Hajj",
+       D  "Zakah",
+      },
+      answer: "C",
+      "explanation": "Mecca is a city in Saudi Arabia"
   },
   {
     id: 11,
