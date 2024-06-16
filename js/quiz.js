@@ -108,7 +108,7 @@ const quizArr = [
        A: "Shahadah",
        B: "Salah",
        C: "Hajj",
-       D  "Zakah",
+       D:  "Zakah",
       },
       answer: "C",
   },
