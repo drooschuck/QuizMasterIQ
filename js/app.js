@@ -267,8 +267,8 @@ const timer = () => {
     timeText.textContent = timeCount;
     if (timeCount == 0) {
       // The score and the timeline width will be 0
-      timeText.textContent = "0" + timeCount;
-      timelineElement.style.width = `0%`;
+      timeText.textContent = "00" + timeCount;
+      timelineElement.style.width = `00%`;
 
       // Clear the time counter and timeline counter
       clearInterval(counter);
@@ -281,7 +281,7 @@ const timer = () => {
       nextQuizBtnChange();
     } else {
       // Show the time
-      timeText.textContent = "0" + timeCount;
+      timeText.textContent = "00" + timeCount;
     }
   }, 1000);
 };
