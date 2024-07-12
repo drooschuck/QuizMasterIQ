@@ -158,14 +158,14 @@ const showQuestion = () => {
 const timelineFunc = () => {
   // initially the width will be 100%
   timelineElement.style.width = `100%`;
-  timeText.textContent = 10;
+  timeText.textContent = 20;
 
   timelineCounter = setInterval(() => {
     // get the time
     const getTime = Number(timeText.textContent);
 
     // the width will change, according to the time
-    timelineElement.style.width = `${getTime * 10}%`;
+    timelineElement.style.width = `${getTime * 20}%`;
   }, 1000);
 };
 
@@ -259,7 +259,7 @@ const questionProgress = () => {
 ! - Timer Function
 */
 const timer = () => {
-  // initially the time start from 10 seconds
+  // initially the time start from 20 seconds
   timeCount = 20;
   timeText.textContent = timeCount;
   counter = setInterval(() => {
