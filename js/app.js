@@ -260,7 +260,7 @@ const questionProgress = () => {
 */
 const timer = () => {
   // initially the time start from 10 seconds
-  timeCount = 10;
+  timeCount = 20;
   timeText.textContent = timeCount;
   counter = setInterval(() => {
     timeCount--;
