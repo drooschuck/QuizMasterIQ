@@ -111,15 +111,15 @@ const quizArr = [
        D:  "Zakah",
       },
       answer: "C",
-  },
-  id: 11, 
-question: "Name 3 Surahs that begins with meem?",
-options: {
-
+    },
+    {	
+ 	 id: 11, 
+	question: "Name 3 Surahs that begins with meem?",
+	options: {			
 	A: "Mur-salat, Maryam,  Muhammad",   
 	B: "Al-nami, IQra, The Samad",
 	C: "Albaqara, Al-emran, Alfalag",
-	D:  "Zakah",
+	D: "Zakah",
 	},
 	answer: "A",
 },
@@ -134,7 +134,6 @@ options: {
         },
         answer: "A",
 },
-
 {
 id: 13, 
 question: "things Allah Hates?",
@@ -198,8 +197,7 @@ options: {
 },
 {
 id: 18, 
-question: "Which Quranic verses were revealed to the prophet SAW when magic 
-had been done on him?",
+question: "Which Quranic verses were revealed to the prophet SAW when magic had been done on him?",
 options: {
 
 	A: "Surah Altakathur, Surah Alkaferoon, Surah Albiana", 
