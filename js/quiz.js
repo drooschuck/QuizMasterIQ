@@ -160,7 +160,7 @@ const quizArr = [
   },
   {
   id: 15, 
-  question: "What does all prophets have in common other than they came with La Illaha IIla Allah",
+  question: "What does all prophets have in common",
   options: {
   
       A: "They Were Kings", 
