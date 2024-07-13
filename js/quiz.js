@@ -112,117 +112,115 @@ const quizArr = [
       },
       answer: "C",
   },
-  {
-    id: 11,
-    question: "What is the correct way to create a closure in JavaScript?",
-    options: {
-      A: "function myFunction(){var x = 10; return function(){return x}}",
-      B: "function myFunction(){let x = 10; return function(){return x}}",
-      C: "function myFunction(){const x = 10; return function(){return x}}",
-      D: "function myFunction(){x = 10; return function(){return x}}",
-    },
-    answer: "A",
-  },
-  {
-    id: 12,
-    question: "What is the difference between == and ===?",
-    options: {
-      A: "== checks for equality and === checks for identity",
-      B: "== checks for identity and === checks for equality",
-      C: "== and === checks for equality",
-      D: "== and === checks for identity",
-    },
-    answer: "A",
-  },
-  {
-    id: 13,
-    question: "What is the correct way to check if a variable is an array?",
-    options: {
-      A: "Array.isArray(myArray)",
-      B: "myArray instanceof Array",
-      C: "myArray.isArray()",
-      D: "typeof myArray === 'array'",
-    },
-    answer: "A",
-  },
-  {
-    id: 14,
-    question: "What is the correct way to declare a class in javascript?",
-    options: {
-      A: "class MyClass{}",
-      B: "function MyClass(){}",
-      C: "new MyClass(){}",
-      D: "MyClass: function(){}",
-    },
-    answer: "A",
-  },
-  {
-    id: 15,
-    question: "What is the correct way to check if a variable is undefined?",
-    options: {
-      A: "typeof myVariable === undefined",
-      B: "myVariable === undefined",
-      C: "myVariable == undefined",
-      D: "myVariable === 'undefined'",
-    },
-    answer: "B",
-  },
-  {
-    id: 16,
-    question:
-      "What is the correct way to convert a string to a number in javascript?",
-    options: {
-      A: "parseInt(string)",
-      B: "parseFloat(string)",
-      C: "Number(string)",
-      D: "string - 0",
-    },
-    answer: "C",
-  },
-  {
-    id: 17,
-    question: "What is the correct way to declare a Map in javascript?",
-    options: {
-      A: "var myMap = new Map();",
-      B: "var myMap = {};",
-      C: "var myMap = Object.create(null);",
-      D: "var myMap = new Object.create(null);",
-    },
-    answer: "A",
-  },
-  {
-    id: 18,
-    question: "What is the difference between null and undefined?",
-    options: {
-      A: "null and undefined are same",
-      B: "null is an assignment value and undefined is a default value",
-      C: "undefined is an assignment value and null is a default value",
-      D: "null is an object and undefined is not an object",
-    },
-    answer: "B",
-  },
-  {
-    id: 19,
-    question:
-      "What is the correct way to check if a variable is a number in javascript?",
-    options: {
-      A: "typeof myVariable === 'number'",
-      B: "isNaN(myVariable)",
-      C: "myVariable instanceof Number",
-      D: "Number.isFinite(myVariable)",
-    },
-    answer: "D",
-  },
-  {
-    id: 20,
-    question:
-      "What is the correct way to check if a variable is an object in javascript?",
-    options: {
-      A: "typeof myVariable === 'object'",
-      B: "myVariable instanceof Object",
-      C: "Object.isObject(myVariable)",
-      D: "myVariable.constructor === Object",
-    },
-    answer: "D",
-  },
+  id: 11, 
+question: "Name 3 Surahs that begins with meem?",
+options: {
+
+	A: "Mur-salat, Maryam,  Muhammad",   
+	B: "Al-nami, IQra, The Samad",
+	C: "Albaqara, Al-emran, Alfalag",
+	},
+	answer: "A",
+},
+{
+id: 12, 
+question: "3 Acts which Allah Loves?",
+options: {
+	A: "Feeding the poor, the orphan and Praying", 
+	B: "Working, playing, laughing", 
+	C: "been famous, wining trophies",
+        },
+        answer: "A",
+},
+
+{
+id: 13, 
+question: "things Allah Hates?",
+options: {
+
+	A: "helpful person",
+	B: "Hypocrites, laying, Shaytan",
+	C: "Prayer", 
+	}, 
+	answer: "B",
+},
+{
+id: 14, 
+question: "Name three animals haram to eat?", 
+options: {
+
+	A: "Chicken, COW, Fish", 
+	B: "goats, Birds, Camel",
+	C: "Pig, Monkey ,Dog",
+	}, 
+	answer: "C",
+},
+{
+id: 15, 
+question: "What does all prophets have in common other than they came with 
+(La Illaha IIla Allah)",
+options: {
+
+	A: "They Were Kings", 
+	B: "They were all Shepherds",
+	C: "They were carpenters",
+	}, 
+	answer: "B",
+},
+{
+id: 16, 
+question: "Name 3 Blessed days throughout the year?",
+options: {
+
+	A: "Laylat Asabt, Alahad, Alethnien", 
+	B: "Laylat Athlatha, Alarbaa, Alkahmis",
+	C: "Laylatul Qadr, Fridays, Eid al-Fitr",
+	}, 
+	answer: "C",
+},
+{
+id: 17, 
+question: "Who was the grandfather of prophet yusuf(AS)?",
+options: {
+
+	A: "Ishaq (AS)", 
+	B: "Isah (AS)",
+	C: "Mussa (AS)",
+	}, 
+	answer: "A",
+},
+{
+id: 18, 
+question: "Which Quranic verses were revealed to the prophet SAW when magic 
+had been done on him?",
+options: {
+
+	A: "Surah Altakathur, Surah Alkaferoon, Surah Albiana", 
+	B: "Surah Al-Nas, Surah Al-Falarq",
+	C: "Surah Al-Masad, Surah Alrahman",
+	}, 
+	answer: "B",
+},
+{
+id: 19, 
+question: "Name the best night and best day?",
+options: {
+
+	A: "Laylatull Alahad, Laylatull khamis", 
+	B: "Laylatull Althalatha, Jumaa ",
+	C: "Laylatull Qadr, Arafa",
+	}, 
+	answer: "C",
+},
+{
+id: 20, 
+question: "When are we closest to Allah (SWT)?",
+options: {
+
+	A: "Sujood (Prostration)", 
+	B: "Rukoo",
+	C: "Iqama",
+	}, 
+	answer: "A",
+},
 ];
