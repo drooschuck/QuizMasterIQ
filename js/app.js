@@ -158,14 +158,20 @@ const showQuestion = () => {
 const timelineFunc = () => {
   // initially the width will be 100%
   timelineElement.style.width = `100%`;
-  timeText.textContent = 20;
+  timeText.textContent = 60; // Change initial time to 60 seconds
 
   timelineCounter = setInterval(() => {
     // get the time
     const getTime = Number(timeText.textContent);
 
-    // the width will change, according to the time
-    timelineElement.style.width = `${getTime * 20}%`;
+    // Check if time is greater than 0 to avoid negative values
+    if (getTime > 0) {
+      // the width will change, according to the time
+      timelineElement.style.width = `${(getTime / 60) * 100}%`; // Adjust width calculation for 60 seconds
+      timeText.textContent = getTime - 1; // Decrease time by 1 second
+    } else {
+      clearInterval(timelineCounter); // Clear the interval when time reaches 0
+    }
   }, 1000);
 };
 
