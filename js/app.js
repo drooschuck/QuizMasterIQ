@@ -240,10 +240,18 @@ const showCorrectAnswer = () => {
       option.children[0].insertAdjacentElement("afterend", tick);
       option.classList.add("correct");
     }
-
+    // Show explanation of the correct answer
+    showExplanation(explanation);
     // After showing the correct Answer, disable all the option
     option.classList.add("disabled");
   }
+};
+
+// Function to display the explanation
+const showExplanation = (explanation) => {
+  const explanationElement = document.getElementById('explanation'); // Make sure you have an element to show the explanation
+  explanationElement.textContent = explanation; // Set the explanation text
+  explanationElement.style.display = 'block'; // Show the explanation element
 };
 
 /*
@@ -326,17 +334,17 @@ const scoreFeedback = (userScore) => {
   // the result will show according to the score
   if (userScore >= 80 && userScore <= 100) {
     confettiStart();
-    resultFeedback.textContent = `You are an expert in Y7 Englsih Quiz, well done on your outstanding performance. Keep up the good work and continue to showcase your skills.`;
+    resultFeedback.textContent = `You are an expert in Ramadan 2025 Quiz, well done on your outstanding performance. Keep up the good work and continue to showcase your skills.`;
   } else if (userScore >= 60 && userScore < 80) {
     confettiStart();
-    resultFeedback.textContent = `You have a solid understanding of Y7 Englsih Quiz, keep working to improve your understanding. Your performance is good, but with additional practice and focus, you can excel in this subject. `;
+    resultFeedback.textContent = `You have a solid understanding of Ramadan 2025 Quiz, keep working to improve your understanding. Your performance is good, but with additional practice and focus, you can excel in this subject. `;
   } else if (userScore >= 40 && userScore < 60) {
     confettiStart();
-    resultFeedback.textContent = `You have a fair understanding of Y7 Englsih Quiz, but there is room for improvement. It's important to continue practicing and reviewing the material to solidify your understanding and skills. I suggest seeking additional resources and assistance to help you improve in this subject.`;
+    resultFeedback.textContent = `You have a fair understanding of Ramadan 2025 Quiz, but there is room for improvement. It's important to continue practicing and reviewing the material to solidify your understanding and skills. I suggest seeking additional resources and assistance to help you improve in this subject.`;
   } else {
     confetti.clear();
     resultExpression.textContent = `Needs Improvement!!!`;
-    resultFeedback.textContent = `The result of this quiz is not satisfactory, it's clear that you have a limited understanding of Y7 Englsih Quiz. It's important to put in extra effort and seek assistance to improve your understanding in this subject. I suggest reviewing the material and practicing regularly in order to improve your performance.`;
+    resultFeedback.textContent = `The result of this quiz is not satisfactory, it's clear that you have a limited understanding of Ramadan 2025. It's important to put in extra effort and seek assistance to improve your understanding in this subject. I suggest reviewing the material and practicing regularly in order to improve your performance.`;
   }
 };
 
