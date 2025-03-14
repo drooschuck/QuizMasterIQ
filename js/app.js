@@ -9,11 +9,8 @@ const exitModal = modalConditionBox.querySelector(".exit-modal");
 const startQuizBtn = modalConditionBox.querySelector(".start-quiz");
 const questionSection = document.querySelector(".question-section");
 const questionText = questionSection.querySelector(".question-text");
-const questionOptionContainer =
-  questionSection.querySelector(".question-options");
-const questionProgressText = questionSection.querySelector(
-  ".question-progress-text"
-);
+const questionOptionContainer = questionSection.querySelector(".question-options");
+const questionProgressText = questionSection.querySelector(".question-progress-text");
 const timeText = questionSection.querySelector(".time-count");
 const nextQuiz = questionSection.querySelector(".next-question");
 const scoreElement = questionSection.querySelector(".score");
@@ -27,6 +24,7 @@ const resultFeedback = resultSection.querySelector(".feedback");
 const restart = resultSection.querySelector(".restart");
 const backHome = resultSection.querySelector(".back-to-home");
 const loadingContainer = document.querySelector(".loading-container");
+const explanationContainer = document.querySelector(".explanation-container"); // New container for explanations
 
 /* =====================
  ! - Important Variables - *
@@ -68,39 +66,27 @@ var confetti = new ConfettiGenerator(confettiSettings);
  ==========================*/
 
 /*
- ! - Modal Open/Close Fuction - *
+ ! - Modal Open/Close Function - *
  */
 const modalFunc = (condition) => {
   if (condition === "open") {
     modalConditionBox.classList.add("active");
     document.body.style.overflow = "hidden";
-    if (document.body.classList.contains("dark-mode")) {
-      modalContainer.classList.add("active-dark");
-    } else {
-      modalContainer.classList.add("active");
-    }
+    modalContainer.classList.toggle("active-dark", document.body.classList.contains("dark-mode"));
   } else {
     modalConditionBox.classList.remove("active");
     document.body.style.overflow = "auto";
-    if (document.body.classList.contains("dark-mode")) {
-      modalContainer.classList.remove("active-dark");
-    } else {
-      modalContainer.classList.remove("active");
-    }
+    modalContainer.classList.remove("active-dark");
   }
 };
 
 /*
 ! - Initial show Function
- * - // initial setup before showing question
-* - // it is used in for later restart and back to home event listener
  */
 const initialShowQuestion = () => {
-  //Remove the result sections
   resultSection.classList.remove("active");
   canvas.style.display = "none";
-
-  // the question and score will start from the 0
+  explanationContainer.innerHTML = ""; // Clear previous explanations
   questionIndex = 0;
   userScore = 0;
   scoreElement.textContent = userScore;
@@ -110,67 +96,43 @@ const initialShowQuestion = () => {
  ! - Show Question Function - *
  */
 const showQuestion = () => {
-  // show Question Section
   questionSection.classList.add("active");
-
-  // Start the timer
   timer();
-
-  // Start the timelineFunc
   timelineFunc();
 
-  // If there is any single option, remove the all option
   if (document.querySelectorAll(".single-option")) {
-    document
-      .querySelectorAll(".single-option")
-      .forEach((element) => element.remove());
+    document.querySelectorAll(".single-option").forEach((element) => element.remove());
   }
 
-  // showing question text
-  questionText.textContent = `${questionIndex + 1}. ${
-    quizArr[questionIndex].question
-  }`;
-
-  // Showing question Options
+  questionText.textContent = `${questionIndex + 1}. ${quizArr[questionIndex].question}`;
   const options = quizArr[questionIndex].options;
 
   for (let option in options) {
     let singleQuestionElement = document.createElement("div");
     singleQuestionElement.classList.add("single-option");
-    singleQuestionElement.innerHTML = `
-    <span class="single-option-text"> ${option}.  ${options[option]}</span>`;
-    singleQuestionElement.addEventListener("click", (e) =>
-      selectedAnswer(option, e)
-    );
+    singleQuestionElement.innerHTML = `<span class="single-option-text"> ${option}.  ${options[option]}</span>`;
+    singleQuestionElement.addEventListener("click", (e) => selectedAnswer(option, e));
     questionOptionContainer.append(singleQuestionElement);
   }
 
-  // Question Progress Text
   questionProgress();
-
-  // user can not see the next quiz button initially
   nextQuiz.style.display = "none";
 };
 
 /*
- ! - Timeline Fuction - *
+ ! - Timeline Function - *
  */
 const timelineFunc = () => {
-  // initially the width will be 100%
   timelineElement.style.width = `100%`;
-  timeText.textContent = 60; // Change initial time to 60 seconds
+  timeText.textContent = 60;
 
   timelineCounter = setInterval(() => {
-    // get the time
     const getTime = Number(timeText.textContent);
-
-    // Check if time is greater than 0 to avoid negative values
     if (getTime > 0) {
-      // the width will change, according to the time
-      timelineElement.style.width = `${(getTime / 60) * 100}%`; // Adjust width calculation for 60 seconds
-      timeText.textContent = getTime - 1; // Decrease time by 1 second
+      timelineElement.style.width = `${(getTime / 60) * 100}%`;
+      timeText.textContent = getTime - 1;
     } else {
-      clearInterval(timelineCounter); // Clear the interval when time reaches 0
+      clearInterval(timelineCounter);
     }
   }, 1000);
 };
@@ -179,16 +141,12 @@ const timelineFunc = () => {
  ! - After select an option, this selected answer function will be triggered - *
  */
 const selectedAnswer = (option, e) => {
-  // clear the time
   clearInterval(counter);
-
-  // clear the timeline
   clearInterval(timelineCounter);
 
-  // Get the Correct Answer
   const selectedOption = option;
   const correctOption = quizArr[questionIndex].answer;
-  //  Checking condition
+
   if (selectedOption === correctOption) {
     userScore += 5;
     scoreElement.textContent = userScore;
@@ -198,11 +156,8 @@ const selectedAnswer = (option, e) => {
     showCorrectAnswer();
   }
 
-  // After selected an option, User can not select any of the option again
   const singleOption = document.querySelectorAll(".single-option");
   singleOption.forEach((element) => element.classList.add("disabled"));
-
-  // show the next question button
   nextQuizBtnChange();
 };
 
@@ -211,16 +166,11 @@ const selectedAnswer = (option, e) => {
 */
 const showIconTick = (e, isTick) => {
   if (e.target.classList.contains("single-option")) {
-    e.target.children[0].insertAdjacentElement(
-      "afterend",
-      isTick === true ? tick : cross
-    );
+    e.target.children[0].insertAdjacentElement("afterend", isTick === true ? tick : cross);
     e.target.classList.add(isTick === true ? "correct" : "incorrect");
   } else {
     e.target.insertAdjacentElement("afterend", isTick === true ? tick : cross);
-    e.target.parentNode.classList.add(
-      isTick === true ? "correct" : "incorrect"
-    );
+    e.target.parentNode.classList.add(isTick === true ? "correct" : "incorrect");
   }
 };
 
@@ -228,73 +178,53 @@ const showIconTick = (e, isTick) => {
 ! - Show Correct Answer Function
 */
 const showCorrectAnswer = () => {
-  // find all single options
   const singleOption = document.getElementsByClassName("single-option");
-
-  // correct answer
   const correctOption = quizArr[questionIndex].answer;
 
-  // looping the option and show the correct option with tick
   for (let option of singleOption) {
     if (option.textContent.trim().slice(0, 1) == correctOption) {
       option.children[0].insertAdjacentElement("afterend", tick);
       option.classList.add("correct");
     }
-    // Show explanation of the correct answer
-    showExplanation(explanation);
-    // After showing the correct Answer, disable all the option
     option.classList.add("disabled");
   }
-};
 
-// Function to display the explanation
-const showExplanation = (explanation) => {
-  const explanationElement = document.getElementById('explanation'); // Make sure you have an element to show the explanation
-  explanationElement.textContent = explanation; // Set the explanation text
-  explanationElement.style.display = 'block'; // Show the explanation element
+  // Show explanation for the correct answer
+  showExplanation(quizArr[questionIndex].explanation);
 };
 
 /*
-! -  Question Progress Function
+! - Show Explanation Function
+*/
+const showExplanation = (explanation) => {
+  explanationContainer.innerHTML = `<p>${explanation}</p>`;
+};
+
+/*
+! - Question Progress Function
 */
 const questionProgress = () => {
-  // Question Progress Loading
-  questionProgressbar.style.width = `${
-    ((questionIndex + 1) / quizArr.length) * 100
-  }%`;
-
-  // Question Progress Text
-  questionProgressText.innerHTML = `<span class="bold">${
-    questionIndex + 1
-  } </span> of  <span class="bold">${quizArr.length}</span> Questions`;
+  questionProgressbar.style.width = `${((questionIndex + 1) / quizArr.length) * 100}%`;
+  questionProgressText.innerHTML = `<span class="bold">${questionIndex + 1} </span> of  <span class="bold">${quizArr.length}</span> Questions`;
 };
 
 /*
 ! - Timer Function
 */
 const timer = () => {
-  // initially the time start from 20 seconds
   timeCount = 60;
   timeText.textContent = timeCount;
   counter = setInterval(() => {
     timeCount--;
     timeText.textContent = timeCount;
     if (timeCount == 0) {
-      // The score and the timeline width will be 0
       timeText.textContent = "00" + timeCount;
       timelineElement.style.width = `00%`;
-
-      // Clear the time counter and timeline counter
       clearInterval(counter);
       clearInterval(timelineCounter);
-
-      // show the correct answer
       showCorrectAnswer();
-
-      // show the next question button
       nextQuizBtnChange();
     } else {
-      // Show the time
       timeText.textContent = "00" + timeCount;
     }
   }, 1000);
@@ -305,11 +235,7 @@ const timer = () => {
 */
 const nextQuizBtnChange = () => {
   nextQuiz.style.display = "block";
-  if (questionIndex === quizArr.length - 1) {
-    nextQuiz.textContent = "Show Result";
-  } else {
-    nextQuiz.textContent = "Next Question";
-  }
+  nextQuiz.textContent = questionIndex === quizArr.length - 1 ? "Show Result" : "Next Question";
 };
 
 /*
@@ -319,11 +245,7 @@ const showResult = () => {
   questionSection.classList.remove("active");
   resultSection.classList.add("active");
   canvas.style.display = "block";
-
-  // Show the result in the result text
   resultText.textContent = `You scored ${userScore} points`;
-
-  // Giving feedback
   scoreFeedback(userScore);
 };
 
@@ -331,7 +253,6 @@ const showResult = () => {
 ! - Score Feedback Function
 */
 const scoreFeedback = (userScore) => {
-  // the result will show according to the score
   if (userScore >= 80 && userScore <= 100) {
     confettiStart();
     resultFeedback.textContent = `You are an expert in Ramadan 2025 Quiz, well done on your outstanding performance. Keep up the good work and continue to showcase your skills.`;
@@ -374,7 +295,7 @@ exitModal.addEventListener("click", () => {
   modalFunc("close");
 });
 
-//When Click on the modal container, the modal will be closed
+// When Click on the modal container, the modal will be closed
 modalContainer.addEventListener("click", (e) => {
   if (e.target == modalContainer) {
     modalFunc("close");
@@ -383,10 +304,7 @@ modalContainer.addEventListener("click", (e) => {
 
 // Start Quiz Event Listener
 startQuizBtn.addEventListener("click", () => {
-  // Close the modal
   modalFunc("close");
-
-  // before question start, there will be a loading state, after the first question, the loading option will not be shown
   if (questionIndex === 0) {
     loadingContainer.style.display = "flex";
     document.body.style.overflow = "hidden";
@@ -395,35 +313,24 @@ startQuizBtn.addEventListener("click", () => {
       showQuestion();
     }, 2500);
   } else {
-    //   Show the question
     showQuestion();
   }
-
-  // From the beginning the score will be 0
   scoreElement.textContent = 0;
 });
 
 // Next Quiz Event listener
 nextQuiz.addEventListener("click", () => {
-  // Increasing the question index
   questionIndex++;
-
-  // if the question completed then the result will show
   if (questionIndex > quizArr.length - 1) {
     showResult();
   } else {
-    // Show the Question
     showQuestion();
   }
 });
 
 // Restart Event functionality
 restart.addEventListener("click", () => {
-  // some initial task will show before shoing question
-  // like - removing the result section, and reset the time and score as well
   initialShowQuestion();
-
-  // before question start, there will be a loading state, after the first question, the loading option will not be shown
   if (questionIndex === 0) {
     loadingContainer.style.display = "flex";
     document.body.style.overflow = "hidden";
@@ -432,14 +339,11 @@ restart.addEventListener("click", () => {
       showQuestion();
     }, 2500);
   } else {
-    //   Show the question
     showQuestion();
   }
 });
 
-// Back To Home Event listner
+// Back To Home Event listener
 backHome.addEventListener("click", () => {
-  // some initial task will show before shoing question
-  // like - removing the result section, and reset the time and score as well
   initialShowQuestion();
 });
