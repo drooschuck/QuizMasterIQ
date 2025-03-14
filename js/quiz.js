@@ -29,6 +29,7 @@ const quizArr = [
       D: "Narrating",
     },
     answer: "B", // commenting
+    explanation: "commenting"
   },
   {
     id: 4,
