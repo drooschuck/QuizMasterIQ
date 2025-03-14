@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IQAJS | Train your brain with our quizes!</title>
+    <title>IQAJS | Train your brain with our quizzes!</title>
     <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -14,9 +14,9 @@
       <header>
         <div class="container">
           <div class="header-content">
-             <a href="https://iquizapp.netlify.app/" class="logo">
-              QuizMaster<span class="highlight">IQ</span></a
-            > 
+            <a href="https://iquizapp.netlify.app/" class="logo">
+              QuizMaster<span class="highlight">IQ</span>
+            </a>
             <button class="switch-mode">
               <input type="checkbox" class="checkbox" id="chk" />
               <label class="label" for="chk">
@@ -34,7 +34,7 @@
         <div class="banner-left">
           <h2 class="banner-title">
             Put your knowledge to the test with our brain-busting
-            <span class="highlight"> Ramadan 2025 </span>quizzes!
+            <span class="highlight"> Ramadan 2025 </span> quizzes!
           </h2>
           <p class="banner-description">
             Our quizzes are designed to challenge even the most knowledgeable
@@ -51,16 +51,16 @@
         </div>
       </section>
 
-      <!-- Modal Condtion Section -->
+      <!-- Modal Condition Section -->
       <section class="quiz-modal-container">
         <div class="quiz-modal-condition glass">
-          <h2 class="modal-title">Some rules to play this Quizes!</h2>
+          <h2 class="modal-title">Some rules to play this Quizzes!</h2>
           <div class="modal-conditions">
             <p>
               1. You will have only
               <span class="highlight">60 seconds</span> for each question.
             </p>
-            <p>2. Once you select your answer, it can't be change.</p>
+            <p>2. Once you select your answer, it can't be changed.</p>
             <p>3. You can't select any option once time goes off.</p>
             <p>4. You will get points on the basis of your correct answer.</p>
           </div>
@@ -77,20 +77,18 @@
           <div class="question-header">
             <div class="time-container">
               <div class="time">
-                <span class="time-count"> 20</span> seconds Left
+                <span class="time-count">20</span> seconds Left
               </div>
             </div>
             <div class="user-score">
-              <p><span class="score"> 10</span> points</p>
+              <p><span class="score">10</span> points</p>
             </div>
           </div>
           <div class="timeline"></div>
           <div class="question-center">
             <h2 class="question-text"></h2>
             <div class="question-options"></div>
-          
-            <div class="answer-description"></div>
-            <div id="explanation"></div>
+            <div class="explanation-container"></div> <!-- New explanation container -->
           </div>
 
           <div class="question-footer">
@@ -125,7 +123,7 @@
       <!-- Canvas || Confetti -->
       <canvas id="my-canvas"></canvas>
 
-      <!-- loading section -->
+      <!-- Loading Section -->
       <section class="loading-container">
         <h2 class="loading-text">Loading...</h2>
         <div class="loading-line-box">
