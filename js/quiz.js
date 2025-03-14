@@ -1,138 +1,234 @@
+
 const quizArr = [
-  {
-    id: 1,
-    question: "What is the primary focus of analytical writing?",
-    options: {
-      A: "Summarizing a text",
-      B: "Commenting on a text and expressing opinions",
-      C: "Creative storytelling",
-      D: "Researching historical events",
-    },
-    answer: "B",
+    {
+      id: 1,
+        question: "Muslims will often write the initials P.B.U.H. after the name of a prophet. What does this mean?",
+        options: {
+          A: "Please be utterly happy",
+          B: "Peace be upon him",
+          C: "Peace be under heaven",
+          D: "Peace be up high",
+        },
+        answer: "B",  
+      },
+      {
+         id: 2,	
+        question: "In which direction do Muslims face when praying?",
+        "options": {
+          A: "Towards Mecca",
+          B: "Towards Istanbul",
+          C: "Towards Rome",
+          D: "Towards Jerusalem",
+        },
+        answer: "A",
+      },
+      {
+         id: 3,   	
+         question: "The name Islam comes from the word 'Salaam', which means .......",
+         options: {
+          A: "love",
+          B: "freedom",
+          C: "peace",
+          D: "justice",
+        },
+        "answer": "C",
+      },
+      {
+        id: 4,  
+        question: "The holy month of prayer, fasting and pilgrimage is known as .......",
+        options: { 
+         A: "Spring",
+         B: "Eid",
+         C: "Ramadan",
+         D: "Shahadah",
+        },
+        answer: "C",
+      },
+      {
+        id: 5,  
+        question: "How many times a day should Muslims pray?",
+        options: {
+        A: "Once",
+        B: "Twice",
+        C: "Four times",
+        D: "Five times"
+        },
+        answer: "D",
+      },
+      { 
+        id: 6,
+        question: "Which of the following is NOT a holy and sacred book in Islam?",
+        options: {
+         A: "The Koran",
+         B: "The Psalms",
+         C: "The Bible",
+         D: "De Anima"
+        },
+        answer: "D",
+      },
+       {
+        id: 7,    	
+        question: "Where do Muslims go to worship?",
+        options: {
+          A: "temple",
+          B: "church",
+          C: "synagogue",
+          D: "mosque",
+        },
+        answer: "D",
+        
+      },
+      { 
+        id: 8,
+        question: "How many pillars of Islam are there?",
+        options: {
+         A: "Four",
+         B: "Five",
+         C: "Eight",
+         D: "Ten",
+        },
+        answer: "B",
+        
+      },
+      { 
+        id: 9,  
+        question: "One of the pillars of Islam is Salah, which means .......",
+        options: {
+         A: "prayer",
+         B: "fasting",
+         C: "giving to charity",
+         D: "pilgrimage"
+         },  
+        answer: "A",
+        
+      },
+      {
+         id: 10, 
+         question: "What is the name for the pilgrimage to Mecca which all faithful Muslims must try to undertake at least once?",
+         options: {
+         A: "Shahadah",
+         B: "Salah",
+         C: "Hajj",
+         D:  "Zakah",
+        },
+        answer: "C",
+      },
+      {	
+        id: 11, 
+      question: "Name 3 Surahs that begins with meem?",
+      options: {			
+      A: "Mur-salat, Maryam,  Muhammad",   
+      B: "Al-nami, IQra, The Samad",
+      C: "Albaqara, Al-emran, Alfalag",
+      D: "Zakah",
+      },
+      answer: "A",
   },
   {
-    id: 2,
-    question: "Analytical writing involves only summarizing the main ideas of a text.",
-    options: {
-      A: "True",
-      B: "False",
-    },
-    answer: "B", // False
+  id: 12, 
+  question: "3 Acts which Allah Loves?",
+  options: {
+      A: "Feeding the poor, the orphan and Praying", 
+      B: "Working, playing, laughing", 
+      C: "been famous, wining trophies",
+       D:  "Zakah",
+          },
+          answer: "A",
   },
   {
-    id: 3,
-    question: "Analytical writing is the process of ________ on a text and formulating opinions based on its language.",
-    options: {
-      A: "Summarizing",
-      B: "Commenting",
-      C: "Researching",
-      D: "Narrating",
-    },
-    answer: "B", // commenting
-    explanation: "commenting"
+  id: 13, 
+  question: "things Allah Hates?",
+  options: {
+  
+      A: "helpful person",
+      B: "Hypocrites, laying, Shaytan",
+      C: "Prayer", 
+      D:  "Zakah",
+      }, 
+      answer: "B",
   },
   {
-    id: 4,
-    question: "What can be drawn from the language of the text in analytical writing?",
-    options: {
-      A: "Facts",
-      B: "Opinions and interpretations",
-      C: "Summaries",
-      D: "Narratives",
-    },
-    answer: "B", // Opinions and interpretations.
+  id: 14, 
+  question: "Name three animals haram to eat?", 
+  options: {
+  
+      A: "Chicken, COW, Fish", 
+      B: "goats, Birds, Camel",
+      C: "Pig, Monkey ,Dog",
+      D:  "Zakah",
+      }, 
+      answer: "C",
   },
   {
-    id: 5,
-    question: "Which of the following best describes the outcome of analytical writing?",
-    options: {
-      A: "A personal narrative",
-      B: "An objective report",
-      C: "A critical analysis of a text",
-      D: "A fictional story",
-    },
-    answer: "C",
+  id: 15, 
+  question: "What does all prophets have in common",
+  options: {
+  
+      A: "They Were Kings", 
+      B: "They were all Shepherds",
+      C: "They were carpenters",
+      D:  "Zakah",
+      }, 
+      answer: "B",
   },
   {
-    id: 6,
-    question: "In analytical writing, the writer's opinions should be based solely on personal feelings rather than the text itself.",
-    options: {
-      A: "True",
-      B: "False",
-    },
-    answer: "B", // False
+  id: 16, 
+  question: "Name 3 Blessed days throughout the year?",
+  options: {
+  
+      A: "Laylat Asabt, Alahad, Alethnien", 
+      B: "Laylat Athlatha, Alarbaa, Alkahmis",
+      C: "Laylatul Qadr, Fridays, Eid al-Fitr",
+      D:  "Zakah",
+      }, 
+      answer: "C",
   },
   {
-    id: 7,
-    question: "Match the following terms with their definitions: 1. Analytical Writing 2. Text 3. Opinions 4. Language",
-    options: {
-      A: "The medium through which ideas are expressed",
-      B: "Personal beliefs or judgments",
-      C: "The process of commenting and formulating thoughts",
-      D: "Written or spoken material to analyse",
-    },
-    answer: "1-C, 2-D, 3-B, 4-A",
+  id: 17, 
+  question: "Who was the grandfather of prophet yusuf(AS)?",
+  options: {
+  
+      A: "Ishaq (AS)", 
+      B: "Isah (AS)",
+      C: "Mussa (AS)",
+      D:  "Zakah",
+      }, 
+      answer: "A",
   },
   {
-    id: 8,
-    question: "What is meant by a 'writer's message' in a text?",
-    options: {
-      A: "The main plot of the story",
-      B: "The underlying message that arises from the narrative",
-      C: "The author's biography",
-      D: "The characters' names",
-    },
-    answer: "B",
+  id: 18, 
+  question: "Which Quranic verses were revealed to the prophet SAW when magic had been done on him?",
+  options: {
+  
+      A: "Surah Altakathur, Surah Alkaferoon, Surah Albiana", 
+      B: "Surah Al-Nas, Surah Al-Falarq",
+      C: "Surah Al-Masad, Surah Alrahman",
+      D:  "Zakah",
+      }, 
+      answer: "B",
   },
   {
-    id: 9,
-    question: "The writer's message is always explicitly stated in the text.",
-    options: {
-      A: "True",
-      B: "False",
-    },
-    answer: "B", // False
+  id: 19, 
+  question: "Name the best night and best day?",
+  options: {
+  
+      A: "Laylatull Alahad, Laylatull khamis", 
+      B: "Laylatull Althalatha, Jumaa ",
+      C: "Laylatull Qadr, Arafa",
+      D:  "Zakah",
+      }, 
+      answer: "C",
   },
   {
-    id: 10,
-    question: "In 'Oliver Twist,' the writer's message can be linked to the author's ________ and own views.",
-    options: {
-      A: "intentions",
-      B: "biography",
-      C: "style",
-      D: "characters",
-    },
-    answer: "A", // intentions
+  id: 20, 
+  question: "When are we closest to Allah (SWT)?",
+  options: {
+  
+      A: "Sujood (Prostration)", 
+      B: "Rukoo",
+      C: "Iqama",
+      D:  "Zakah",
+      }, 
+      answer: "A",
   },
-  {
-    id: 11,
-    question: "How does the writer's message in 'Oliver Twist' reflect Charles Dickens' views on society?",
-    options: {
-      A: "It reflects Dickens' critique of social injustices, particularly regarding poverty and the treatment of orphans in Victorian England.",
-      B: "It focuses on the adventures of Oliver.",
-      C: "It highlights the importance of friendship.",
-      D: "It discusses the author's life.",
-    },
-    answer: "A",
-  },
-  {
-    id: 12,
-    question: "Which of the following best describes the relationship between a writer's message and the narrative?",
-    options: {
-      A: "The writer's message is unrelated to the narrative.",
-      B: "The writer's message is a superficial element of the narrative.",
-      C: "The writer's message arises from the narrative and reflects the author's intentions.",
-      D: "The writer's message is only about the characters.",
-    },
-    answer: "C",
-  },
-  {
-    id: 13,
-    question: "The writer's message in a narrative can provide insight into the author's personal beliefs and societal critiques.",
-    options: {
-      A: "True",
-      B: "False",
-    },
-    answer: "A",
-  },
-];
+  ];
