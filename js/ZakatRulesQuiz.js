@@ -111,4 +111,3 @@ const quizArr = [
   },
 ];
 
-export default quizArr;
