@@ -3,7 +3,7 @@ const quizArr = [
     id: 1,
     question: "What is the full name of Prophet Muhammad (PBUH)?",
     options: {
-      A: "Muhammad ibn Abdullah",
+      A: "Mohammed Ibn Abdullah, Ibn Abdul Mutalib, Ibn Hashem",
       B: "Muhammad ibn Ali",
       C: "Muhammad ibn Ibrahim",
       D: "Muhammad ibn Hasan",
