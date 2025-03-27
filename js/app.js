@@ -313,7 +313,7 @@
    canvas.style.display = "block";
  
    // Show the result in the result text
-   resultText.textContent = `You scored ${userScore} points`;
+   resultText.textContent = `${userName}, You scored ${userScore} points`;
  
    // Giving feedback
    scoreFeedback(userScore);
@@ -373,8 +373,18 @@
    }
  });
  
+ let userName = "";
  // Start Quiz Event Listener
  startQuizBtn.addEventListener("click", () => {
+  // Capture the user name from the input field
+  const userNameInput = document.getElementById("user-name-input");
+  userName = userNameInput.value.trim(); 
+
+  // Validate user name input
+  if (userName === "") {
+    alert("Please enter your name to start the quiz.");
+    return; // Exit the function if the name is empty
+  }
    // Close the modal
    modalFunc("close");
  
