@@ -190,7 +190,7 @@
    const correctOption = quizArr[questionIndex].answer;
    //  Checking condition
    if (selectedOption === correctOption) {
-     userScore += 5;
+     userScore += 10;
      scoreElement.textContent = userScore;
      showIconTick(e, true);
    } else {
