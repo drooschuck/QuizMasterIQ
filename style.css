@@ -6,11 +6,11 @@
 /* Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
 
-/* Universal CSS */
+/* Universal CSS #787878 */
 :root {
   --main-color: #fca311;
   --main-white: #e0e0e0;
-  --secondary-black: #787878;
+  --secondary-black: #525252 ;
   --main-black: #0a0a0a;
   --text-black: #0a0a0a;
   --light-main-color: #fca2116b;
